@@ -1,4 +1,4 @@
-from funciones.funciones import (sumar_restar_polinomios, multiplicar_polinomios, dividir_polinomios, evaluar_polinomio, mostrar_polinomio, ingresar_polinomio)
+from funciones.funciones import (sumar_restar_polinomios, multiplicar_polinomios, dividir_polinomios, evaluar_polinomio)
 
 def menu():
     """Menú de opciones de la calculadora de polinomios."""

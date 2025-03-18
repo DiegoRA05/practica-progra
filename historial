@@ -1,0 +1,27 @@
+Operación: suma de 2.0x^1 + 2.0 y 2.0x^1 + 2.0
+Resultado: 4.0x^1 + 4.0
+
+Operación: resta de 2.0x^2 + 3.0x^1 y 3.0x^2 + 2.0x^1 + 1.0
+Resultado: 1.0x^2 + 1.0x^1 - 1.0
+
+Operación: división de 3.0x^3 + 3.0x^2 + 3.0x^1 + 4.0 por 2.0x^5 + 5.0x^4 + 2.0x^3 + 3.0x^2 + 1.0x^1 + 4.0
+Resultado: Cociente: 0, Residuo: 3.0x^3 + 3.0x^2 + 3.0x^1 + 4.0
+
+Operación: división de 4.0x^7 + 5.0x^6 + 3.0x^5 + 6.0x^4 + 9.0x^3 + 6.0x^2 + 3.0x^1 + 1.0 por 7.0x^5 + 9.0x^4 + 9.0x^3 + 7.0x^2 + 2.0x^1 + 4.0
+Resultado: Cociente: 0.5714285714285714x^2 - 0.02040816326530605x^1 - 0.27988338192419826, Residuo: 4.702623906705539x^4 + 10.518950437317784x^3 + 5.714285714285714x^2 + 3.6413994169096204x^1 + 2.119533527696793
+
+Operación: división de 4.0x^3 + 3.0x^2 + 4.0x^1 + 2.0 por 2.0x^3 + 5.0x^2 + 4.0x^1 + 1.0
+Resultado: Cociente: 2.0, Residuo: 7.0x^2 - 4.0x^1
+
+Operación: división de 2.0x^2 + 2.0x^1 + 2.0 por 4.0x^2 + 4.0x^1 + 4.0
+Resultado: Cociente: 0.5, Residuo: 0
+
+Operación: división de 2.0x^2 + 2.0x^1 + 2.0 por 4.0x^2 + 4.0x^1 + 4.0
+Resultado: Cociente: 0.5, Residuo: 0
+
+Operación: multiplicación de 2.0x^2 + 2.0x^1 + 2.0 y 3.0x^3 + 3.0x^2 + 3.0x^1 + 3.0
+Resultado: 6.0x^5 + 12.0x^4 + 18.0x^3 + 18.0x^2 + 12.0x^1 + 6.0
+
+Operación: división de 2.0x^2 + 2.0x^1 + 2.0 por 4.0x^2 + 4.0x^1 + 4.0
+Resultado: Cociente: 0.5, Residuo: 0
+

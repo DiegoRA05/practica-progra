@@ -1,3 +1,15 @@
+def escribir_historial(operacion, resultado, archivo="historial"):
+    """
+    Registra la operación y el resultado en un archivo de historial.
+
+    Args:
+    operacion (str): Descripción de la operación realizada.
+    resultado (str): Resultado de la operación.
+    archivo (str): Ruta al archivo de historial.
+    """
+    with open(archivo, "a") as f:
+        f.write(f"Operación: {operacion}\nResultado: {resultado}\n\n")
+
 def ingresar_polinomio():
     """Solicita al usuario el grado del polinomio y sus coeficientes."""
     grado = int(input("Introduce el grado del polinomio: "))
@@ -37,9 +49,15 @@ def sumar_restar_polinomios():
     p2 = [0] * (max_grado - len(p2)) + p2
 
     resultado = [(p1[i] + p2[i]) if operacion == '+' else (p1[i] - p2[i]) for i in range(max_grado)]
+    resultado_str = mostrar_polinomio(resultado)
 
     print("\nResultado:")
-    print(mostrar_polinomio(resultado))
+    print(resultado_str)
+
+    # Registrar en el historial
+    operacion_texto = "suma" if operacion == '+' else "resta"
+    descripcion_operacion = f"{operacion_texto} de {mostrar_polinomio(p1)} y {mostrar_polinomio(p2)}"
+    escribir_historial(descripcion_operacion, resultado_str)
 
 
 def multiplicar_polinomios():
@@ -55,8 +73,13 @@ def multiplicar_polinomios():
         for j in range(len(p2)):
             resultado[i + j] += p1[i] * p2[j]
 
+    resultado_str = mostrar_polinomio(resultado)
     print("\nResultado:")
-    print(mostrar_polinomio(resultado))
+    print(resultado_str)
+
+    # Registrar en el historial
+    descripcion_operacion = f"multiplicación de {mostrar_polinomio(p1)} y {mostrar_polinomio(p2)}"
+    escribir_historial(descripcion_operacion, resultado_str)
 
 
 def dividir_polinomios():
@@ -75,7 +98,6 @@ def dividir_polinomios():
 
     while len(residuo) >= len(divisor):
         coef = residuo[0] / divisor[0]
-        grado_diff = len(residuo) - len(divisor)
         cociente.append(coef)
 
         # Restar el polinomio divisor escalado
@@ -84,10 +106,17 @@ def dividir_polinomios():
 
         residuo.pop(0)
 
+    cociente_str = mostrar_polinomio(cociente)
+    residuo_str = mostrar_polinomio(residuo)
     print("\nCociente:")
-    print(mostrar_polinomio(cociente))
+    print(cociente_str)
     print("\nResiduo:")
-    print(mostrar_polinomio(residuo))
+    print(residuo_str)
+
+    # Registrar en el historial
+    descripcion_operacion = f"división de {mostrar_polinomio(dividendo)} por {mostrar_polinomio(divisor)}"
+    resultado_str = f"Cociente: {cociente_str}, Residuo: {residuo_str}"
+    escribir_historial(descripcion_operacion, resultado_str)
 
 
 def evaluar_polinomio():
@@ -97,5 +126,9 @@ def evaluar_polinomio():
     x_valor = float(input("Introduce el valor de x: "))
 
     resultado = sum(coef * (x_valor ** (len(p) - i - 1)) for i, coef in enumerate(p))
-
+    resultado_str = str(resultado)
     print(f"\nEl resultado de evaluar el polinomio en x = {x_valor} es: {resultado}")
+
+    # Registrar en el historial
+    descripcion_operacion = f"evaluación de {mostrar_polinomio(p)} en x = {x_valor}"
+    escribir_historial(descripcion_operacion, resultado_str)
