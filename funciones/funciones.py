@@ -28,6 +28,8 @@ def mostrar_polinomio(coeficientes):
         if coef != 0:
             if polinomio_str:
                 polinomio_str += " + " if coef > 0 else " - "
+            else:
+                polinomio_str += "-" if coef < 0 else ""
             polinomio_str += f"{abs(coef)}x^{exponente}" if exponente > 0 else f"{abs(coef)}"
     return polinomio_str if polinomio_str else "0"
 
@@ -54,7 +56,6 @@ def sumar_restar_polinomios():
     print("\nResultado:")
     print(resultado_str)
 
-    # Registrar en el historial
     operacion_texto = "suma" if operacion == '+' else "resta"
     descripcion_operacion = f"{operacion_texto} de {mostrar_polinomio(p1)} y {mostrar_polinomio(p2)}"
     escribir_historial(descripcion_operacion, resultado_str)
@@ -77,7 +78,6 @@ def multiplicar_polinomios():
     print("\nResultado:")
     print(resultado_str)
 
-    # Registrar en el historial
     descripcion_operacion = f"multiplicación de {mostrar_polinomio(p1)} y {mostrar_polinomio(p2)}"
     escribir_historial(descripcion_operacion, resultado_str)
 
@@ -100,7 +100,6 @@ def dividir_polinomios():
         coef = residuo[0] / divisor[0]
         cociente.append(coef)
 
-        # Restar el polinomio divisor escalado
         for i in range(len(divisor)):
             residuo[i] -= coef * divisor[i]
 
@@ -113,7 +112,6 @@ def dividir_polinomios():
     print("\nResiduo:")
     print(residuo_str)
 
-    # Registrar en el historial
     descripcion_operacion = f"división de {mostrar_polinomio(dividendo)} por {mostrar_polinomio(divisor)}"
     resultado_str = f"Cociente: {cociente_str}, Residuo: {residuo_str}"
     escribir_historial(descripcion_operacion, resultado_str)
@@ -129,6 +127,5 @@ def evaluar_polinomio():
     resultado_str = str(resultado)
     print(f"\nEl resultado de evaluar el polinomio en x = {x_valor} es: {resultado}")
 
-    # Registrar en el historial
     descripcion_operacion = f"evaluación de {mostrar_polinomio(p)} en x = {x_valor}"
     escribir_historial(descripcion_operacion, resultado_str)
